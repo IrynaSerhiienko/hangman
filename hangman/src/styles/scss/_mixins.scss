@@ -1,0 +1,18 @@
+@mixin font-setting($f-st, $f-w, $f-sz, $l-h, $l-s, $f-c: null) {
+  font-style: $f-st;
+  font-weight: $f-w;
+  font-size: $f-sz;
+  line-height: $l-h;
+  letter-spacing: $l-s;
+  color: $f-c;
+}
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin size-m-w($m-w, $h) {
+  max-width: $m-w;
+  height: $h;
+}

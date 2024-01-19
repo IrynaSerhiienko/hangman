@@ -1,0 +1,18 @@
+.hero-section {
+  display: flex;
+  margin-top: 20px;
+  justify-content: end;
+
+  @media screen and (min-width: 768px) {
+    margin: 20px 0;
+  }
+
+  .title {
+    font-family: 'Cinzel Decorative', serif;
+    @include font-setting(normal, 900, 40px, 125%, 0.001em, $background-accent);
+
+    @media screen and (min-width: 1440px) {
+      font-size: 70px;
+    }
+  }
+}

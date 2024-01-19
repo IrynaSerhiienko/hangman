@@ -1,0 +1,58 @@
+.gallows-part {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    margin-bottom: 0;
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 0;
+  }
+
+  .img-hangman-container {
+    position: relative;
+    @include size(176px, 290px);
+
+    .img-hangman {
+      @include size(100%, 100%);
+    }
+
+    @media screen and (min-width: 1440px) {
+      @include size(353px, 581px);
+    }
+  }
+
+  .img-thief-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+
+  .img-thief {
+    position: absolute;
+    top: 55px;
+    left: 25px;
+    @include size(250px, 200px);
+    transition: opacity ease-in-out 0.5s;
+
+    @media screen and (min-width: 1440px) {
+      top: 110px;
+      left: 65px;
+      @include size(480px, 390px);
+    }
+
+    &.head,
+    &.body-part,
+    &.hand-l,
+    &.hand-r,
+    &.leg-l,
+    &.leg-r {
+      opacity: 0;
+    }
+  }
+}

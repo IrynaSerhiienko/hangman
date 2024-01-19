@@ -1,0 +1,93 @@
+.quiz-part {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    gap: 20px;
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 40px;
+  }
+}
+
+.word-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  @include size(100%, auto);
+
+  .letter-container {
+    @include size(30px, auto);
+    margin-bottom: 5px;
+    @include font-setting(normal, 600, 24px, 125%, 0.001em, transparent);
+    text-align: center;
+    border-bottom: 3px solid $text-light;
+    transition: all ease-in-out 0.5s;
+
+    &.show {
+      color: $text-light;
+      border-bottom: none;
+    }
+  }
+}
+
+.hint-container,
+.counter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  text-align: center;
+  background-color: $background-dark;
+  @include size-m-w(100%, auto);
+  @include font-setting(normal, 600, 16px, 125%, 0.001em, $text-light);
+  border-radius: 5px;
+
+  @media screen and (min-width: 768px) {
+    text-align: center;
+    background-color: transparent;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 24px;
+  }
+}
+
+.hint-container {
+  @include size-m-w(350px, auto);
+}
+
+.keyboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-self: center;
+  @include size(330px, auto);
+
+  .letter-key {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    @include font-setting(normal, 700, 24px, 125%, 0.001em, $text-dark);
+    @include size(35px, 35px);
+    background-color: #e99561;
+
+    &.active {
+      background-color: #bcb6b3;
+    }
+
+    @media screen and (min-width: 1140px) {
+      @include size(40px, 40px);
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    @include size(auto, auto);
+    gap: 20px;
+  }
+}
